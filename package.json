@@ -2,6 +2,7 @@
   "name": "mst-react-router",
   "description": "Keep your MobX State Tree state in sync with react-router",
   "main": "dist/mst-react-router.js",
+  "version": "1.0.0",
   "types": "./types.d.ts",
   "scripts": {
     "lint": "eslint src __test__",

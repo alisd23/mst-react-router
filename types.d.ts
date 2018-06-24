@@ -7,15 +7,15 @@ import { IStateTreeNode, IModelType, Snapshot } from 'mobx-state-tree';
 
 declare namespace MstReactRouter {
 
-    export interface RouterModel extends Pick<History, 'location' | 'action' | 'push' | 'replace' | 'go' | 'goBack' | 'goForward' | 'block'>, IStateTreeNode { }
+  export interface RouterModel extends Pick<History, 'location' | 'action' | 'push' | 'replace' | 'go' | 'goBack' | 'goForward' | 'block'>, IStateTreeNode { }
 
-    export const RouterModel: IModelType<Snapshot<Pick<RouterModel, 'location' | 'action'>>, RouterModel>
+  export const RouterModel: IModelType<Snapshot<Pick<RouterModel, 'location' | 'action'>>, RouterModel>
 
-    export interface SynchronizedHistory extends History {
-        unsubscribe?: UnregisterCallback;
-    }
+  export interface SynchronizedHistory extends History {
+    unsubscribe?: UnregisterCallback;
+  }
 
-    export function syncHistoryWithStore(history: History, store: RouterModel): SynchronizedHistory;
+  export function syncHistoryWithStore(history: History, store: RouterModel): SynchronizedHistory;
 }
 
 export = MstReactRouter;

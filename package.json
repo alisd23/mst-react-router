@@ -69,7 +69,7 @@
     "webpack-cli": "^2.0.10"
   },
   "peerDependencies": {
-    "mobx-state-tree": "^2.2.0",
+    "mobx-state-tree": "^3.0.0",
     "react-router": "4.x"
   },
   "dependencies": {}

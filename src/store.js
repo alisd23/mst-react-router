@@ -2,7 +2,7 @@ import { types } from 'mobx-state-tree';
 
 export const RouterModel = types
   .model('RouterModel', {
-    location: types.optional(types.frozen),
+    location: types.optional(types.frozen()),
     action: types.optional(types.string, '')
   })
   .actions(routerModel => {

@@ -3,6 +3,7 @@
   "description": "Keep your MobX State Tree state in sync with react-router",
   "main": "dist/mst-react-router.js",
   "types": "./types.d.ts",
+  "version": "3.0.0",
   "scripts": {
     "lint": "eslint src __test__",
     "test": "npm run lint && jest",
@@ -59,7 +60,7 @@
     "eslint-plugin-standard": "^2.0.0",
     "jest": "^19.0.0",
     "mobx": "^4.3.1",
-    "mobx-state-tree": "^2.2.0",
+    "mobx-state-tree": "^3.0.0",
     "react": "^15.0.0",
     "react-router": "^4.0.0",
     "rimraf": "^2.5.4",
@@ -69,7 +70,7 @@
     "webpack-cli": "^2.0.10"
   },
   "peerDependencies": {
-    "mobx-state-tree": "^2.2.0",
+    "mobx-state-tree": "^3.0.0",
     "react-router": "4.x"
   },
   "dependencies": {}

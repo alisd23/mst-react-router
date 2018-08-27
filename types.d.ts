@@ -3,13 +3,22 @@
 // Definitions by: Keyj1n https://github.com/Keyj1n
 
 import { History, Location, UnregisterCallback } from 'history';
-import { IStateTreeNode, IModelType, Snapshot } from 'mobx-state-tree';
+import { IStateTreeNode, IModelType, ModelPropertiesDeclarationToProperties, IComplexType, Instance } from 'mobx-state-tree';
 
 declare namespace MstReactRouter {
+  type Props = {
+    location: IComplexType<Location, Location, Location>;
+    action: string;
+  }
 
-  export interface RouterModel extends Pick<History, 'location' | 'action' | 'push' | 'replace' | 'go' | 'goBack' | 'goForward' | 'block'>, IStateTreeNode { }
+  export type RouterModelType = IModelType<
+    ModelPropertiesDeclarationToProperties<Props>,
+    Pick<History, 'push' | 'replace' | 'go' | 'goBack' | 'goForward' | 'block'>
+  >;
 
-  export const RouterModel: IModelType<Snapshot<Pick<RouterModel, 'location' | 'action'>>, RouterModel>
+  export type RouterModel = Instance<RouterModelType>;
+
+  export const RouterModel: RouterModelType;
 
   export interface SynchronizedHistory extends History {
     unsubscribe?: UnregisterCallback;

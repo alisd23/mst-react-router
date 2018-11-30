@@ -43,11 +43,35 @@ module.exports = {
   },
   externals: [
     {
+      'mobx': {
+        root: 'Mobx',
+        commonjs2: 'mobx',
+        commonjs: 'mobx',
+        amd: 'mobx'
+      }
+    },
+    {
       'mobx-state-tree': {
         root: 'MobxStateTree',
         commonjs2: 'mobx-state-tree',
         commonjs: 'mobx-state-tree',
         amd: 'mobx-state-tree'
+      }
+    },
+    {
+      'react': {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react'
+      }
+    },
+    {
+      'react-router': {
+        root: 'ReactRouter',
+        commonjs2: 'react-router',
+        commonjs: 'react-router',
+        amd: 'react-router'
       }
     }
   ],

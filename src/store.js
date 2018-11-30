@@ -16,7 +16,6 @@ export const RouterModel = types
       },
       _setHistory(initialHistory) {
         history = initialHistory;
-        routerModel.location = { ...history.location };
       },
       push() {
         history.push(...arguments);

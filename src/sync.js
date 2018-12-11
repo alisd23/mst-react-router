@@ -29,7 +29,7 @@ export const syncHistoryWithStore = (history, store) => {
     () => store.location,
     location => {
       if (!isLocationEqual(history.location, location)) {
-        history.replace(location);
+        history.replace({ ...location });
       }
     }
   );

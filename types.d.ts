@@ -3,11 +3,11 @@
 // Definitions by: Keyj1n https://github.com/Keyj1n
 
 import { History, Location, UnregisterCallback } from 'history';
-import { IModelType, ModelPropertiesDeclarationToProperties, IType, Instance } from 'mobx-state-tree';
+import { IModelType, ModelPropertiesDeclarationToProperties, IType, IOptionalIType, Instance } from 'mobx-state-tree';
 
 declare namespace MstReactRouter {
   type Props = {
-    location: IType<Location, Location, Location>;
+    location: IOptionalIType<IType<Location, Location, Location>>;
     action: string;
   }
 

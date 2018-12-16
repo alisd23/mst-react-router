@@ -22,24 +22,24 @@ describe('store', () => {
     expect(mockHistory.push.mock.calls[0]).toEqual(['push', 'args']);
   });
 
-  it('can call replace() and proxy arguments through', () => {
+  it('can call replace() and proxy argument through', () => {
     routerModel.replace('replace', 'args');
     expect(mockHistory.replace.mock.calls.length).toBe(1);
     expect(mockHistory.replace.mock.calls[0]).toEqual(['replace', 'args']);
   });
 
-  it('can call go() and proxy arguments through', () => {
+  it('can call go() and proxy argument through', () => {
     routerModel.go(-1);
     expect(mockHistory.go.mock.calls.length).toBe(1);
     expect(mockHistory.go.mock.calls[0]).toEqual([-1]);
   });
 
-  it('can call goBack() and proxy arguments through', () => {
+  it('can call goBack()', () => {
     routerModel.goBack();
     expect(mockHistory.goBack.mock.calls.length).toBe(1);
   });
 
-  it('can call goForward() and proxy arguments through', () => {
+  it('can call goForward()', () => {
     routerModel.goForward();
     expect(mockHistory.goForward.mock.calls.length).toBe(1);
   });

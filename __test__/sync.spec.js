@@ -1,4 +1,5 @@
 import createMemoryHistory from 'history/createMemoryHistory';
+import { applySnapshot } from 'mobx-state-tree';
 import { RouterModel, syncHistoryWithStore } from '../index';
 
 let history, memoryHistory, routerModel;
@@ -36,7 +37,7 @@ beforeEach(() => {
 });
 
 describe('syncing', () => {
-  it('syncs store with history', () => {
+  it('syncs history to store', () => {
     expect(routerModel.action).toBe('POP');
     expect(routerModel.location).toEqualLocation({
       pathname: '/'
@@ -68,6 +69,59 @@ describe('syncing', () => {
       query: { animal: 'fish' },
       hash: '#mango'
     });
+  });
+
+  it('syncs store to history', async () => {
+    // Note:
+    // history.action will always be "replace",
+    // because IMO, time-travelling shouldn't alter the history.
+
+    let location = {
+      hash: '',
+      pathname: '/',
+      search: '',
+      state: undefined
+    };
+    expect(history.action).toBe('POP');
+    expect(history.location).toEqualLocation(location);
+
+    location = { ...location, pathname: '/url-1' };
+    applySnapshot(routerModel, {
+      action: 'PUSH',
+      location
+    });
+    expect(history.action).toBe('REPLACE');
+    expect(history.location).toEqualLocation(location);
+
+    location = { ...location, pathname: '/' };
+    applySnapshot(routerModel, {
+      action: 'POP',
+      location
+    });
+    expect(history.action).toBe('REPLACE');
+    expect(history.location).toEqualLocation(location);
+
+    location = { ...location, pathname: '/url-1' };
+    applySnapshot(routerModel, {
+      action: 'POP',
+      location
+    });
+    expect(history.action).toBe('REPLACE');
+    expect(history.location).toEqualLocation(location);
+
+    location = {
+      ...location,
+      hash: '#mango',
+      pathname: '/url-2',
+      query: { animal: 'fish' },
+      search: '?animal=fish'
+    };
+    applySnapshot(routerModel, {
+      action: 'REPLACE',
+      location
+    });
+    expect(history.action).toBe('REPLACE');
+    expect(history.location).toEqualLocation(location);
   });
 
   it('provdides a way to unsubscribe the router store from history', () => {

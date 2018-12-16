@@ -43,8 +43,16 @@ module.exports = {
   },
   externals: [
     {
+      'mobx': {
+        root: 'mobx',
+        commonjs2: 'mobx',
+        commonjs: 'mobx',
+        amd: 'mobx'
+      }
+    },
+    {
       'mobx-state-tree': {
-        root: 'MobxStateTree',
+        root: 'mobxStateTree',
         commonjs2: 'mobx-state-tree',
         commonjs: 'mobx-state-tree',
         amd: 'mobx-state-tree'

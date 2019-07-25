@@ -7,7 +7,7 @@ import { IModelType, ModelPropertiesDeclarationToProperties, IType, IOptionalITy
 
 declare namespace MstReactRouter {
   type Props = {
-    location: IOptionalIType<IType<Location, Location, Location>>;
+    location: IOptionalIType<IType<Location, Location, Location>, [undefined]>;
     action: string;
   }
 

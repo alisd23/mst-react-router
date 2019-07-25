@@ -5155,9 +5155,10 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-mobx-state-tree@^3.8.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-3.9.0.tgz#78fc35fc0b64e6d38335a4dcb2b234f9c7e589e7"
+mobx-state-tree@^3.11.0:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-3.12.2.tgz#4bc8ab0303d1bba222627091c3db311c7de19ee9"
+  integrity sha512-l6c4litG9igU4BgQmZYu3bBaXMZnxJiuJzIrfNzV4tDTjuejAOuTM/P2tiPiC2QUsjdqCaDpnieLkpezwBzMIg==
 
 mobx@^4.3.1:
   version "4.6.0"
